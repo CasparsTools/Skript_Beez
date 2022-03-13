@@ -150,10 +150,10 @@ function game_dataHandler_updateIngameItem():
 
 	game_dataHandler_crate_register("DEVELOPMENT", "SETTING:GUARANTEE:TRUE,LITTER_ITEM:1~10:10,POOPIE_ITEM:1~5:60,WHEAT_ITEM:1~3:30", (location at (-45.5, 97.5, -19.5) in world("minepvp")))
 
-#	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 1, 50, "LITTER_ITEM")
-#	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 2, 30, "STONE_ITEM")
-#	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 3, 19, "TEMPORARY_BLOCK_ITEM")
-#	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 4, 1, "COCAINE_ITEM")
+	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 1, 50, "LITTER_ITEM")
+	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 2, 30, "STONE_ITEM")
+	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 3, 19, "TEMPORARY_BLOCK_ITEM")
+	game_dataHandler_chanceReward_registerItem("COMMON_CRATE", 4, 1, "COCAINE_ITEM")
 
 	game_dataHandler_items_register("FORGOTTEN_GOLD", (GOLD_NUGGET named "&aGold Miner's Forgotten Gold" with lore "&7&oMaterial"))
 
@@ -1102,11 +1102,11 @@ function game_dataHandler_updateIngameItem():
 # SHOP - SPECIAL
 # SHOP - SPECIAL
 
-#	game_dataHandler_shop_register("SPECIAL", "TEMPORARY_BLOCK_ITEM:16")
-#	game_dataHandler_shop_purchaseCost("TEMPORARY_BLOCK_ITEM", "STONE_ITEM:300")
+	game_dataHandler_shop_register("SPECIAL", "TEMPORARY_BLOCK_ITEM:16")
+	game_dataHandler_shop_purchaseCost("TEMPORARY_BLOCK_ITEM", "STONE_ITEM:300")
 
-#	game_dataHandler_shop_register("SPECIAL", "WARP_PEARL_ITEM:4")
-#	game_dataHandler_shop_purchaseCost("WARP_PEARL_ITEM", "COCAINE_ITEM:5,GOLD_ITEM:300")
+	game_dataHandler_shop_register("SPECIAL", "WARP_PEARL_ITEM:4")
+	game_dataHandler_shop_purchaseCost("WARP_PEARL_ITEM", "COCAINE_ITEM:5,GOLD_ITEM:300")
 
 # SHOP - WANDERER
 # SHOP - WANDERER
@@ -1338,11 +1338,11 @@ function game_dataHandler_updateIngameItem():
 	game_dataHandler_shop_register("DRUG", "COCAINE_ITEM")
 	game_dataHandler_shop_purchaseCost("COCAINE_ITEM", "TICKET_ITEM:100")
 
-#	game_dataHandler_shop_register("DRUG", "COCAINE_HELMET_1_ITEM")
-#	game_dataHandler_shop_purchaseCost("COCAINE_HELMET_1_ITEM", "COCAINE_ITEM:1200,REDSTONE_ITEM:60000")
+	game_dataHandler_shop_register("DRUG", "COCAINE_HELMET_1_ITEM")
+	game_dataHandler_shop_purchaseCost("COCAINE_HELMET_1_ITEM", "COCAINE_ITEM:1200,REDSTONE_ITEM:60000")
 
-#	game_dataHandler_shop_register("DRUG", "COCAINE_LEGGINGS_1_ITEM")
-#	game_dataHandler_shop_purchaseCost("COCAINE_LEGGINGS_1_ITEM", "COCAINE_ITEM:1500,REDSTONE_ITEM:70000")
+	game_dataHandler_shop_register("DRUG", "COCAINE_LEGGINGS_1_ITEM")
+	game_dataHandler_shop_purchaseCost("COCAINE_LEGGINGS_1_ITEM", "COCAINE_ITEM:1500,REDSTONE_ITEM:70000")
 
 function game_dataHandler_updateIngameMobs():
 	# TYPE NAME DAMAGE REACH HEALTH PROTECTION SPEED LOOT LOCATION
@@ -1543,9 +1543,9 @@ function game_dataHandler_pickaxe_register(primaryID: text, level: number, name:
 	set {_pickaxeID} to "%{_primaryID}%_%{_level}%"
 	set {-game_dataHandler::%{_pickaxeID}%_ITEM} to game_dataHandler_public_linkItemToID(game_pickaxeHandler_pickaxe_getPickaxe({_name}, {_level}, {_canBreak}, {_efficiency}, {_levelStats}), "%{_pickaxeID}%_ITEM")
 
-#function game_dataHandler_pickaxe_getPickaxe(primaryID: text, level: number) :: item:
-#	set {_pickaxeID} to "%{_primaryID}%_%{_level}%"
-#	return {-game_dataHandler::%{_pickaxeID}%_ITEM}
+function game_dataHandler_pickaxe_getPickaxe(primaryID: text, level: number) :: item:
+	set {_pickaxeID} to "%{_primaryID}%_%{_level}%"
+	return {-game_dataHandler::%{_pickaxeID}%_ITEM}
 
 function game_dataHandler_axe_register(primaryID: text, level: number, name: text, canBreak: text, efficiency: number, levelStats: text):
 	set {_axeID} to "%{_primaryID}%_%{_level}%"
@@ -1613,7 +1613,7 @@ function game_dataHandler_mob_registerMob(type: text, name: text, damage: number
 	set {-entityData::%{_mobUUID}%_SPAWN_LOCATION} to {_location}
 	set {-entityData::%{_mobUUID}%_DEATH_COUNT} to 0
 	set the name of {_mob} to {_name}
-#	set custom name visibility of {_mob} to true
+	set custom name visibility of {_mob} to true
 	game_healthbarHandler_new({_mob})
 	game_healthbarHandler_update({_mob})
 	add "{NoAI:1}" to entity-nbt of {_mob}
